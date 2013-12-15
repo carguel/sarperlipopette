@@ -1,13 +1,30 @@
 -# navigation styled for Bootstrap 3.0
-%nav.navbar.navbar-default.navbar-fixed-top
+%nav.navbar.navbar-default.navbar-static-top
   .container
     .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+      %button.navbar-toggle{"data-target" => "navbar-collapse", "data-toggle" => "collapse", :type => "button"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
+      = link_to root_path, class: 'navbar-brand' do
+        %strong.animbrand SARperlipopette
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
-        = render 'layouts/navigation_links'
+        %li.dropdown{class: controller.controller_name == "nanu" && 'active'}
+          %a.dropdown-toggle{"data-toggle" => "dropdown", "href" => "#"}
+            %span.glyphicon.glyphicon-list-alt
+            NANU
+            %span.caret
+          %ul.dropdown-menu
+            %li
+              = link_to "Create", nanu_new_path
+        %li.dropdown{class: controller.controller_name == "date_and_time" && 'active'}
+          %a.dropdown-toggle{"data-toggle" => "dropdown", "href" => "#"}
+            %span.glyphicon.glyphicon-time
+            Date and time
+            %span.caret
+          %ul.dropdown-menu
+            %li
+              = link_to "Convert", date_and_time_new_path
+          
