@@ -11,14 +11,22 @@
         %strong.animbrand SARperlipopette
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li.dropdown{class: controller.controller_name == "nanu" && 'active'}
+        -# %li.dropdown{class: controller.controller_name == "nanu" && 'active'}
+        -#   %a.dropdown-toggle{"data-toggle" => "dropdown", "href" => "#"}
+        -#     %span.glyphicon.glyphicon-list-alt
+        -#     NANU
+        -#     %span.caret
+        -#   %ul.dropdown-menu
+        -#     %li
+        -#       = link_to "Create", nanu_new_path
+        %li.dropdown{class: controller.controller_name == "nagus" && 'active'}
           %a.dropdown-toggle{"data-toggle" => "dropdown", "href" => "#"}
             %span.glyphicon.glyphicon-list-alt
-            NANU
+            NAGU
             %span.caret
           %ul.dropdown-menu
             %li
-              = link_to "Create", nanu_new_path
+              = link_to "Create", new_nagu_path
         %li.dropdown{class: controller.controller_name == "date_and_time" && 'active'}
           %a.dropdown-toggle{"data-toggle" => "dropdown", "href" => "#"}
             %span.glyphicon.glyphicon-time

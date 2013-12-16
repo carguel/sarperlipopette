@@ -1,0 +1,81 @@
+                   1.STATUS Information Group
+ 
+                  GLONASS Constellation Status
+                      ( <%= @nagu.status_date %>)
+ 
+|GLONASS|Cosmos|Plane/|Frequ.|   Launch   |   Intro    |  Status   |  Outage    |
+|number |number| slot |chann.|    date    |    date    |           |    date    |
+|-------|------|------|------|------------|------------|-----------|------------|
+|  730  | 2456 | 1/01 |  01  | 14.12.2009 | 30.01.2010 | operating | .......... |
+|  747  | 2485 | 1/02 |  -4  | 26.04.2013 | 04.07.2013 | operating | .......... |
+|  744  | 2476 | 1/03 |  05  | 04.11.2011 | 08.12.2011 | operating | .......... |
+|  742  | 2474 | 1/04 |  06  | 02.10.2011 | 25.10.2011 | operating | .......... |
+|  734  | 2458 | 1/05 |  01  | 14.12.2009 | 10.01.2010 | operating | .......... |
+|  733  | 2457 | 1/06 |  -4  | 14.12.2009 | 24.01.2010 | operating | .......... |
+|  745  | 2477 | 1/07 |  05  | 04.11.2011 | 18.12.2011 | operating | .......... |
+|  743  | 2475 | 1/08 |  06  | 14.11.2011 | 25.12.2011 | operating | .......... |
+|  736  | 2464 | 2/09 |  -2  | 02.09.2010 | 04.10.2010 | operating | .......... |
+|  717  | 2426 | 2/10 |  -7  | 25.12.2006 | 03.04.2007 | operating | .......... |
+|  723  | 2436 | 2/11 |  00  | 25.12.2007 | 22.01.2008 | operating | .......... |
+|  737  | 2465 | 2/12 |  -1  | 02.09.2010 | 11.10.2010 | operating | .......... |
+|  721  | 2434 | 2/13 |  -2  | 25.12.2007 | 08.02.2008 | operating | .......... |
+|  715  | 2424 | 2/14 |  -7  | 25.12.2006 | 03.04.2007 | operating | .......... |
+|  716  | 2425 | 2/15 |  00  | 25.12.2006 | 12.10.2007 | operating | .......... |
+|  738  | 2466 | 2/16 |  -1  | 02.09.2010 | 12.10.2010 | operating | .......... |
+|  746  | 2478 | 3/17 |  04  | 28.11.2011 | 23.12.2011 | operating | .......... |
+|  724  | 2442 | 3/18 |  -3  | 25.09.2008 | 26.10.2008 | operating | .......... |
+|  720  | 2433 | 3/19 |  03  | 26.10.2007 | 25.11.2007 | operating | .......... |
+|  719  | 2432 | 3/20 |  02  | 26.10.2007 | 27.11.2007 | operating | .......... |
+|  725  | 2443 | 3/21 |  04  | 25.09.2008 | 05.11.2008 | operating | .......... |
+|  731  | 2459 | 3/22 |  -3  | 02.03.2010 | 28.03.2010 | operating | .......... |
+|  732  | 2460 | 3/23 |  03  | 02.03.2010 | 28.03.2010 | operating | .......... |
+|  735  | 2461 | 3/24 |  02  | 02.03.2010 | 28.03.2010 | operating | .......... |
+ 
+Note: All the dates (DD.MM.YY) are given at Moscow Time (UTC+0300)
+ 
+ 
+                2.SUMMARY Information Group
+
+SUBJ:GLONASS STATUS  <%= @nagu.summary_date %>
+ 
+1.SATELLITES, PLANES, SLOTS AND CHANNELS
+ 
+| Plane 1/ slot | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 |
+|       Channel | 01 | -4 | 05 | 06 | 01 | -4 | 05 | 06 |  
+|---------------|----|----|----|----|----|----|----|----|
+| Plane 2/ slot | 09 | 10 | 11 | 12 | 13 | 14 | 15 | 16 |
+|       Channel | -2 | -7 | 00 | -1 | -2 | -7 | 00 | -1 |  
+|---------------|----|----|----|----|----|----|----|----|
+| Plane 3/ slot | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 |
+|       Channel | 04 | -3 | 03 | 02 | 04 | -3 | 03 | 02 |  
+ 
+2.CURRENT ADVISORIES (ADV) AND FORECASTS (FCST)
+INFORMATION IS REPEATED FOR ONE MONTH AFTER EVENT CONCLUDES.
+ALL THE DATES (DD.MM.YY) ARE GIVEN AT MOSCOW TIME (UTC+0300)
+ 
+ 
+A. FORECASTS
+NAGU-MSG.DATE-TIME-SL/CH-TYPE-SUMMARY
+
+ 
+
+B. ADVISORIES
+
+NAGU-MSG.DATE-TIME-SL/CH-TYPE-SUMMARY
+
+ 080-131212-12.12.13-1100-08/06-ADVS-UNUSABLE 12.12/0926-12.12/1111
+ 
+C. GENERAL: NO IMPACT, INFORMATIONAL PURPOSE ONLY
+NAGU-MSG.DATE-TIME-SL/CH-TYPE-SUMMAR
+
+ 
+                     3.NAGU Information Group
+
+ 
+<%=@nagu.slot_id%>
+NOTICE ADVISORY TO GLONASS USERS (NAGU) <%=@nagu.slot_id%>
+SUBJ: 08/06 (743) UNUSABLE <%=@nagu.start_date_s%>-<%=@nagu.end_date_s%> MT
+1.CONDITION: 08/06 (743) WAS UNUSABLE
+ SINCE <%=@nagu.start_date_s%> UNTIL <%=@nagu.end_date_s%>
+ MT (UTC+0300) DUE TO MAINTENANCE
+2.USERS ARE REMINDED TO UPDATE ALMANACS IF NECESSARY
