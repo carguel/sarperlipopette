@@ -1,17 +1,20 @@
 %h1 Create a NAGU
 
-= form_for @nagu, url: {action: 'create'}, html: {class: 'form-horizontal', role: 'form'} do |f|
-  .form-group
-    %label.col-sm-2.control-label{for: 'nagu_sat_id'} Sat ID
-    .col-sm-4
-      = f.number_field :sat_id, class: 'form-control'
-  .form-group
-    %label.col-sm-2.control-label{for: 'nagu_unavailability_start_date'} Unavailability start date
-    .col-sm-4
-      = datetime_select :nagu, :unavailability_start_date, class: 'form-control', start_year: Date.today.year
-  .form-group
-    %label.col-sm-2.control-label{for: 'nagu_unavailability_end_date'} Unavailability end date
-    .col-sm-4
-      = datetime_select :nagu, :unavailability_end_date, class: 'form-control', start_year: Date.today.year, default: 2.days.from_now
-
-  = f.submit 'Create', class: 'btn btn-default'
+.well
+  = form_for @nagu, url: {action: 'create'}, html: {class: 'form-horizontal', role: 'form'} do |f|
+    %fieldset 
+      %legend NAGU parameters
+      .form-group
+        %label.col-sm-2.control-label{for: 'nagu_sat_id'} Sat ID
+        .col-sm-4
+          = f.number_field :sat_id, class: 'form-control'
+          %span.help-block Enter a Cospas/Sarsat satellite Id. 
+      .form-group
+        %label.col-sm-2.control-label{for: 'nagu_unavailability_start_date'} Unavailability start date
+        .col-sm-4
+          = datetime_select :nagu, :unavailability_start_date, class: 'form-control', start_year: Date.today.year
+      .form-group
+        %label.col-sm-2.control-label{for: 'nagu_unavailability_end_date'} Unavailability end date
+        .col-sm-4
+          = datetime_select :nagu, :unavailability_end_date, class: 'form-control', start_year: Date.today.year, default: 2.days.from_now
+      = f.submit 'Create', class: 'btn btn-default'
