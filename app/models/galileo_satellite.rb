@@ -1,0 +1,3 @@
+class GalileoSatellite < Satellite
+
+end

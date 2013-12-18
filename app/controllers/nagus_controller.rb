@@ -7,14 +7,21 @@ class NagusController < ApplicationController
     params[:nagu][:unavailability_start_date] = to_date :unavailability_start_date
     params[:nagu][:unavailability_end_date] = to_date :unavailability_end_date
 
-    # Hack as ActiveModel does not currently support multiparameters
+    # Hack needed as ActiveModel does not currently support multiparameters
     params[:nagu].reject!{ |p| p.match /\)/ }
 
-    nagu = Nagu.new(nagu_params)
-    @nagu = NaguPresenter.new(nagu)
+    satellite = GlonassSatellite.where(cospas_sarsat_id: params[:nagu][:sat_id]).first
 
-    #response.headers['Content-Disposition'] = 'attachment; filename=nagu.txt'
-    render :show, content_type: 'text/plain', layout: false
+    nagu = Nagu.new(nagu_params)
+    begin
+      @nagu = NaguPresenter.new(nagu, satellite)
+      #response.headers['Content-Disposition'] = 'attachment; filename=nagu.txt'
+      render :show, content_type: 'text/plain', layout: false
+    rescue InvalidNaguSatellite => e
+      @nagu = nagu
+      flash[:alert ] = "The Sat ID you provided is not suitable for the generation of a NAGU"
+      render :new
+    end
   end
 
   def show

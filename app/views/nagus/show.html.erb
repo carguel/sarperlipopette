@@ -63,7 +63,7 @@ B. ADVISORIES
 
 NAGU-MSG.DATE-TIME-SL/CH-TYPE-SUMMARY
 
- 080-131212-12.12.13-1100-08/06-ADVS-UNUSABLE 12.12/0926-12.12/1111
+ <%=@nagu.slot_id%>-<%=@nagu.emission_time%>-<%=@nagu.plane_slot%>-ADVS-UNUSABLE <%=@nagu.slot_period%>
  
 C. GENERAL: NO IMPACT, INFORMATIONAL PURPOSE ONLY
 NAGU-MSG.DATE-TIME-SL/CH-TYPE-SUMMAR
@@ -74,8 +74,8 @@ NAGU-MSG.DATE-TIME-SL/CH-TYPE-SUMMAR
  
 <%=@nagu.slot_id%>
 NOTICE ADVISORY TO GLONASS USERS (NAGU) <%=@nagu.slot_id%>
-SUBJ: 08/06 (743) UNUSABLE <%=@nagu.start_date_s%>-<%=@nagu.end_date_s%> MT
-1.CONDITION: 08/06 (743) WAS UNUSABLE
+SUBJ: <%=@nagu.plane_slot%> (<%=@nagu.glonass_id%>) UNUSABLE <%=@nagu.start_date_s%>-<%=@nagu.end_date_s%> MT
+1.CONDITION: <%=@nagu.plane_slot%> (<%=@nagu.glonass_id%>) WAS UNUSABLE
  SINCE <%=@nagu.start_date_s%> UNTIL <%=@nagu.end_date_s%>
  MT (UTC+0300) DUE TO MAINTENANCE
 2.USERS ARE REMINDED TO UPDATE ALMANACS IF NECESSARY

@@ -1,0 +1,3 @@
+class GpsSatellite < Satellite
+
+end

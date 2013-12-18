@@ -1,0 +1,3 @@
+class GlonassSatellite < Satellite
+
+end

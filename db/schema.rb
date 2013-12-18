@@ -11,6 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20131218135443) do
+
+  create_table "counters", force: true do |t|
+    t.string   "name"
+    t.integer  "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "satellites", force: true do |t|
+    t.string   "name"
+    t.string   "type"
+    t.integer  "norad_id"
+    t.integer  "cospas_sarsat_id"
+    t.integer  "glonass_id"
+    t.integer  "cosmos_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "glonass_plane_slot"
+  end
 
 end
