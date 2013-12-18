@@ -1,0 +1,20 @@
+%h1 Registered Satellites
+%hr
+
+%table.table.table-hover.table-condensed
+  %thead
+    %th Name
+    %th Type
+    %th Cospas Sarsat Id
+    %th Norad Id
+    %th Details
+  %tbody
+    - @satellites.each do |sat|
+      %tr
+        %td #{ sat.name }
+        %td #{ sat.class }
+        %td #{ sat.cospas_sarsat_id }
+        %td #{ sat.norad_id }
+        %td 
+          %a.glyphicon.glyphicon-info-sign{"href" => satellite_path(sat)}
+

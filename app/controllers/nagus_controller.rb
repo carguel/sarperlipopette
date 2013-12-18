@@ -15,7 +15,7 @@ class NagusController < ApplicationController
     nagu = Nagu.new(nagu_params)
     begin
       @nagu = NaguPresenter.new(nagu, satellite)
-      #response.headers['Content-Disposition'] = 'attachment; filename=nagu.txt'
+      response.headers['Content-Disposition'] = 'attachment; filename=nagu.txt'
       render :show, content_type: 'text/plain', layout: false
     rescue InvalidNaguSatellite => e
       @nagu = nagu

@@ -1,0 +1,19 @@
+%h1 Satellite #{@satellite.name}
+%hr
+%dl
+  %dt Name
+  %dd #{@satellite.name}
+  %dt Type
+  %dd #{@satellite.class.name}
+  %dt Cospas Sarsat Id.
+  %dd #{@satellite.cospas_sarsat_id || "Undefined"}
+  %dt NORAD Id.
+  %dd #{@satellite.norad_id}
+  - if @satellite.respond_to? :glonass_id
+    %dt Glonass Id.
+    %dd #{@satellite.glonass_id || "Undefined"}
+    %dt COSMOS Id.
+    %dd #{@satellite.cosmos_id}
+
+
+

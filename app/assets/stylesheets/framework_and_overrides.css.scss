@@ -37,9 +37,21 @@ main {
   background-color: #eee;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px; // accommodate the navbar
+  margin-top: 150px; // accommodate the navbar
   }
 section {
   @extend .row;
   margin-top: 20px;
   }
+
+.sar-enhanced::before {
+    content: 'SAR';
+    color: $brand-primary;
+}
+.sar-enhanced {
+    font-family:"Comic Sans MS", cursive, sans-serif
+  }
+
+body {
+  padding-top: 64px; // accommodate the navbar
+}
