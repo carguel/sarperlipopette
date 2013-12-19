@@ -19,7 +19,7 @@ class NagusController < ApplicationController
       render :show, content_type: 'text/plain', layout: false
     rescue InvalidNaguSatellite => e
       @nagu = nagu
-      flash[:alert ] = "The Sat ID you provided is not suitable for the generation of a NAGU"
+      flash.now[:alert ] = "The Sat ID you provided is not suitable for the generation of a NAGU"
       render :new
     end
   end

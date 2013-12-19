@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    models:
+      satellite: "Satellite"
+      glonass_satellite: "Glonass Satellite"
+    attributes:
+      satellite:
+        cospas_sarsat_id: "Cospas Sarsat Id."

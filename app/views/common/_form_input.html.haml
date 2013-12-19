@@ -1,0 +1,9 @@
+- type ||= :text
+.form-group
+  %label.col-sm-2.control-label{for: attribute.to_s} #{label} 
+  .col-sm-4
+    - case type
+      - when :number
+        = f.number_field :norad_id, class: 'form-control'
+      - when :text
+        = f.text_field attribute, class: 'form-control'

@@ -1,0 +1,12 @@
+%h1 Satellite #{@satellite.name}
+%hr
+  = simple_form_for @satellite, as: :satellite, url: {controller: "satellites", action: 'update'}, role: "form"  do |f|
+    .well
+      %fieldset
+        %legend Edit satellite
+        = f.input :name
+        = f.input :cospas_sarsat_id
+        = f.input :norad_id
+        = render partial: 'edit_glonass', locals: {f: f}
+    = f.button :submit
+

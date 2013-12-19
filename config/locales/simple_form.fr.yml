@@ -1,4 +1,4 @@
-en:
+fr:
   simple_form:
     "yes": 'Yes'
     "no": 'No'
@@ -25,7 +25,7 @@ en:
     #     password: 'No special characters, please.'
     labels:
       satellite:
-        cospas_sarsat_id: 'Cospas Sarsat Id.'
+        cospas_sarsat_id: 'Id. Cospas Sarsat'
         name: 'Name'
         glonass_id: 'Glonass Id.'
         norad_id: 'NORAD Id.'
@@ -33,4 +33,4 @@ en:
         glonass_plane_slot: 'Glonass Plane/Slot'
   helpers:
     submit:
-      update: 'Update'
+      update: 'Mettre à jour'

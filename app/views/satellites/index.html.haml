@@ -4,17 +4,22 @@
 %table.table.table-hover.table-condensed
   %thead
     %th Name
-    %th Type
+    %th Constellation
     %th Cospas Sarsat Id
     %th Norad Id
-    %th Details
+    %th Operations
   %tbody
     - @satellites.each do |sat|
       %tr
         %td #{ sat.name }
-        %td #{ sat.class }
+        %td #{ sat.constellation }
         %td #{ sat.cospas_sarsat_id }
         %td #{ sat.norad_id }
         %td 
-          %a.glyphicon.glyphicon-info-sign{"href" => satellite_path(sat)}
+          %a{"href" => satellite_path(sat)}
+            %i.glyphicon.glyphicon-info-sign
+          %a{"href" => edit_satellite_path(sat)}
+            %i.glyphicon.glyphicon-edit
+          %a{"href" => "http://www.satflare.com/track.asp?q=#{sat.norad_id}#TOP", "target" => "_blank"}
+            %i.glyphicon.glyphicon-globe
 
