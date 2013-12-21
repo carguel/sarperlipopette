@@ -1,0 +1,95 @@
+%p
+  .text-right
+    %small
+      %a{"href" => "#", "data-toggle" => "modal", "data-target" => "#filterOptionModal"}
+        .glyphicon.glyphicon-question-sign
+        filter options
+
+.modal.fade#filterOptionModal{"tabindex" => "-1", "role" => "dialog", "aria-labelledby" => "filterOptionModalLabel",  "aria-hidden" => "true"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"type" => "button", "data-dismiss" => "modal", "aria-hidden" => "true"} &times
+        %h4.modal-title#filterOptionModalLabel Filter options
+      .modal-body 
+        %table.table
+          %thead
+            %tr
+              %th Type
+              %th Description
+              %th Examples
+          %tbody
+            %tr
+              %td text
+              %td Any text entered in the filter will match text found within the column
+              %td 
+                %button abc
+                (finds "abc", "abcd", "abcde", etc); 
+                %button Aaron
+                (finds "Aaron" and "Philip Aaron Wong")
+            %tr
+              %td ~
+              %td Perform a fuzzy search (matches sequential characters) by adding a tilde to the beginning of the query
+              %td
+                %button ~bee
+                (matches "Bruce Lee" and "Brenda Dexter") or 
+                %button ~piano
+                (matches "Philip Aaron Wongg")
+            %tr
+              %td "
+              %td To exactly match the search query, add a quote, apostrophe or equal sign to the beginning and/or end of the query
+              %td
+                %button abc"
+                or 
+                %button abc= 
+                (exactly match "abc")
+            %tr
+              %td ?
+              %td Wildcard for a single, non-space character
+              %td
+                %button J?n 
+                (finds "Jan" and "Jun", but not "Joan")
+            %tr
+              %td *
+              %td Wildcard for zero or more non-nonspace characters
+              %td 
+                %button B*k 
+                (matches "Black" and "Book")
+            %tr
+              %td /\d/
+              %td Add any regex to the query to use in the query
+              %td 
+                %button /b[aeiou]g/i 
+                (finds "bag", "beg", "BIG", "Bug", etc)
+            %tr
+              %td &lt; &lt;= &gt;= &gt;
+              %td Find alphabetical or numerical values less than or greater than or equal to the filtered query
+              %td 
+                %button &gt;=10
+                (find  values greater than or equal to 10)
+            %tr
+              %td !
+              %td Not operator. Filter the column with content that do not match the query.
+              %td
+                %button !fe 
+                (hide rows with "female" in that column, but shows rows with "male")
+            %tr
+              %td &amp;&amp;  or  AND 
+              %td Logical "and". Filter the column for content that matchhes text from either side of the operator.
+              %td
+                %button box && bat 
+                (matches a column cell that contains both "box" and "bat")
+            %tr
+              %td | or  OR 
+              %td Logical "or" (Vertical bar). Filter the column for containt that matches text from either side of the bar
+              %td
+                %button box|bat
+                (matches a column cell with either "box" or "bat")
+            %tr
+              %td - or to
+              %td Find a range of values. Make sure there is a space before and after the dash (or the word "to")
+              %td
+                %button 10 - 30
+                or 
+                %button 10 to 30
+                (matches values between 10 and 30)
