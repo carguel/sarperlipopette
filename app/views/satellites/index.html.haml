@@ -1,13 +1,33 @@
 %h1 Registered Satellites
 %hr
 
-%table.table.table-hover.table-condensed
+-# %table.table.table-hover.table-condensed
+%table.table.table-condensed.sortable
   %thead
-    %th Name
-    %th Constellation
-    %th Cospas Sarsat Id
-    %th Norad Id
-    %th Operations
+    %tr
+      %th Name
+      %th.filter-select.filter-exact{"data-placeholder" => "Choose ..."} Constellation
+      %th Cospas Sarsat Id
+      %th Norad Id
+      %th Operations
+  %tfoot
+    %tr
+      %th.ts-pager.form-horizontal{"colspan" => "5"}
+        %button.btn.first
+          %i.glyphicon.glyphicon-step-backward
+        %button.btn.prev
+          %i.glyphicon.glyphicon-backward
+        %span.pagedisplay
+        %button.btn.next
+          %i.glyphicon.glyphicon-forward
+        %button.btn.last
+          %i.glyphicon.glyphicon-step-forward
+        %select.pagesize.input-mini{"title" => "Select page size"}
+          %option{"selectected" => "selected", "value"=> "10"} 10
+          %option{"value" => "20"} 20
+          %option{"value" => "30"} 30
+          %option{"value" => "40"} 40
+        %select.pagenum.input-mini{"title" => "Select page number"}
   %tbody
     - @satellites.each do |sat|
       %tr
@@ -22,4 +42,3 @@
             %i.glyphicon.glyphicon-edit
           %a{"href" => "http://www.satflare.com/track.asp?q=#{sat.norad_id}#TOP", "target" => "_blank"}
             %i.glyphicon.glyphicon-globe
-

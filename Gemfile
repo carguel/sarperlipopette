@@ -12,6 +12,9 @@ gem 'figaro'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'pg'
+gem 'jquery-tablesorter'
+gem 'jquery-turbolinks'
+
 group :development do
   gem 'sqlite3'
   gem 'better_errors'
