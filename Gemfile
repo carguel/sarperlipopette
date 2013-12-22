@@ -14,6 +14,7 @@ gem 'simple_form'
 gem 'pg'
 gem 'jquery-tablesorter'
 gem 'jquery-turbolinks'
+gem 'animate-rails'
 
 group :development do
   gem 'sqlite3'

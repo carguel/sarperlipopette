@@ -1,4 +1,4 @@
-%h1 Satellite #{@satellite.name}
+%h2 Satellite #{@satellite.name}
 %hr
   = simple_form_for @satellite, as: :satellite, url: {controller: "satellites", action: 'update'}, role: "form"  do |f|
     .well

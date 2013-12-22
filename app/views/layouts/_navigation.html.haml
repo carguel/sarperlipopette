@@ -1,16 +1,16 @@
 -# navigation styled for Bootstrap 3.0
-%nav.navbar.navbar-default.navbar-fixed-top
+.navbar.navbar-default.navbar-fixed-top{"role" => "banner"}
   .container
     .navbar-header
-      %button.navbar-toggle{"data-target" => "navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", "type" => "button"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to root_path, class: 'navbar-brand' do
+      = link_to root_path, class: 'navbar-brand animated flash' do
         %strong
           %em.brand.sar-enhanced perlipopette
-    .collapse.navbar-collapse
+    %nav.collapse.navbar-collapse{"role" => "navigation"}
       %ul.nav.navbar-nav
         -# %li.dropdown{class: controller.controller_name == "nanu" && 'active'}
         -#   %a.dropdown-toggle{"data-toggle" => "dropdown", "href" => "#"}
