@@ -1,11 +1,1 @@
-%h1 POSIX date to human date conversion
-%hr
-= form_tag({controller: "date_and_time", action: "create"}, class: "form-horizontal", role: "form",  method: "post") do
-  .well
-    %fielset
-      %legend Enter POSIX date
-      .form-group
-        = label_tag(:posix_date, "POSIX Date", class: "col-lg-2 control-label")
-        .col-lg-4
-          = text_field_tag(:posix_date, nil, class: "form-control", type: "number", placeholder: "POSIX date in seconds, ex: '#{Time.now.to_f}' ")
-  = submit_tag("Convert", class: "btn btn-primary")
+= render "posix_to_human_form"
